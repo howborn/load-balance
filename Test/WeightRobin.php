@@ -1,4 +1,7 @@
 <?php
+
+use Robin\WeightRobin;
+
 require_once '../Robin/Autoloader.php';
 
 // 加权轮询

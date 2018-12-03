@@ -1,5 +1,8 @@
 <?php
-require_once '../Robin/Autoloader.php';
+
+use Robin\Robin;
+
+require_once '../Autoloader.php';
 
 // 简单轮询
 $services = [

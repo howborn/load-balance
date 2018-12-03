@@ -5,6 +5,7 @@
  * @author haobaif <haobaif@jumei.com>
  * @date 2018/11/30
  */
+namespace Robin;
 
 class Robin implements RobinInterface
 {
