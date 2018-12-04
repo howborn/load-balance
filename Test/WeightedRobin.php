@@ -1,8 +1,8 @@
 <?php
 
-use Robin\WeightRobin;
+use Robin\WeightedRobin;
 
-require_once '../Robin/Autoloader.php';
+require_once '../Autoloader.php';
 
 // 加权轮询
 $services = [
@@ -12,7 +12,7 @@ $services = [
     '192.168.10.4:2202' => 1,
 ];
 
-$robin = new WeightRobin();
+$robin = new WeightedRobin();
 $robin->init($services);
 
 $nodes = [];

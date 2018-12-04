@@ -7,7 +7,7 @@
  */
 namespace Robin;
 
-class WeightRobin implements RobinInterface
+class WeightedRobin implements RobinInterface
 {
     private $services = array();
 
