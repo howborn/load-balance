@@ -40,7 +40,7 @@ class SmoothWeightedRobin implements RobinInterface
         $this->setCurrentWeight($this->currentPos, $currentWeight);
 
         // 所有实例的当前权重加上配置权重
-        $this->adjustCurrentWeight();
+        $this->recoverCurrentWeight();
 
         return $this->services[$this->currentPos]['ip'];
     }
@@ -104,7 +104,7 @@ class SmoothWeightedRobin implements RobinInterface
     /**
      * 调整当前权重,即加上配置权重
      */
-    public function adjustCurrentWeight()
+    public function recoverCurrentWeight()
     {
         foreach ($this->services as $index => &$service) {
             $service['current_weight'] += $service['weight'];
