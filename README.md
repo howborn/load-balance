@@ -2,7 +2,7 @@
 
 ## 介绍
 
-用 PHP 实现几种负载均衡调度算法，见 [负载均衡算法](https://www.fanhaobai.com/2018/11/load-balance-round-robin.html) 系列。
+用 PHP 实现几种负载均衡调度算法，详细见 [负载均衡算法](https://www.fanhaobai.com/2018/11/load-balance-round-robin.html) 系列。
 
 ![预览图](https://img1.fanhaobai.com/2018/11/load-balance-round-robin/1e858872-6235-4131-98ba-433690eb32c1.jpg)
 
@@ -19,7 +19,7 @@
 ```PHP
 use Robin\SmoothWeightedRobin;
 
-require_once '../Autoloader.php';
+require_once '/Autoloader.php';
 
 // 加权轮询
 $services = [
@@ -28,6 +28,7 @@ $services = [
     '192.168.10.3:2202' => 1,
 ];
 
+// 使用平滑加权算法
 $robin = new SmoothWeightedRobin();
 $robin->init($services);
 
