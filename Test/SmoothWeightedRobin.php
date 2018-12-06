@@ -4,7 +4,7 @@ use Robin\SmoothWeightedRobin;
 
 require_once '../Autoloader.php';
 
-// 加权轮询
+// 平滑加权轮询
 $services = [
     '192.168.10.1:2202' => 5,
     '192.168.10.2:2202' => 1,

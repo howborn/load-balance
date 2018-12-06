@@ -32,21 +32,21 @@ class SmoothWeightedRobin implements RobinInterface
 
     public function next()
     {
-        // 获取最大当前权重实例位置
+        // 获取最大当前有效权重的实例位置
         $this->currentPos = $this->getMaxCurrentWeightPos();
 
         // 当前权重减去权重和
         $currentWeight = $this->getCurrentWeight($this->currentPos) - $this->getSumWeight();
         $this->setCurrentWeight($this->currentPos, $currentWeight);
 
-        // 所有实例的当前权重加上配置权重
+        // 每个实例的当前有效权重加上配置权重
         $this->recoverCurrentWeight();
 
         return $this->services[$this->currentPos]['ip'];
     }
 
     /**
-     * 获取最大当前权重实例位置
+     * 获取最大当前有效权重实例位置
      *
      * @return int
      */
@@ -66,7 +66,7 @@ class SmoothWeightedRobin implements RobinInterface
     /**
      * 配置权重和
      *
-     * @return int
+     * @return integer
      */
     public function getSumWeight()
     {
@@ -79,10 +79,10 @@ class SmoothWeightedRobin implements RobinInterface
     }
 
     /**
-     * 设置当前权重
+     * 设置当前有效权重
      *
-     * @param $pos
-     * @param $weight
+     * @param integer $pos
+     * @param integer $weight
      */
     public function setCurrentWeight($pos, $weight)
     {
@@ -90,7 +90,7 @@ class SmoothWeightedRobin implements RobinInterface
     }
 
     /**
-     * 获取当前权重
+     * 获取当前有效权重
      *
      * @param integer $pos
      *
@@ -102,7 +102,7 @@ class SmoothWeightedRobin implements RobinInterface
     }
 
     /**
-     * 调整当前权重,即加上配置权重
+     * 用配置权重调整当前有效权重
      */
     public function recoverCurrentWeight()
     {

@@ -13,15 +13,13 @@ interface RobinInterface
      * 初始化服务权重
      *
      * @param array $services
-     *
-     * @return mixed
      */
     public function init(array $services);
 
     /**
      * 获取一个服务
      *
-     * @return mixed
+     * @return string
      */
     public function next();
 

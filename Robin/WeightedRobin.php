@@ -58,8 +58,8 @@ class WeightedRobin implements RobinInterface
     /**
      * 求两数的最大公约数(基于欧几里德算法,可使用gmp_gcd())
      *
-     * @param $a
-     * @param $b
+     * @param integer $a
+     * @param integer $b
      *
      * @return integer
      */
@@ -94,7 +94,7 @@ class WeightedRobin implements RobinInterface
     /**
      * 获取最大权重值
      *
-     * @return int
+     * @return integer
      */
     private function getMaxWeight()
     {
